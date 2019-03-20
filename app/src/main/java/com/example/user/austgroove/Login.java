@@ -92,7 +92,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     }
     private void userlogin() {
         final String username = unEditText.getText().toString().trim();
-        String password = pwEditText.getText().toString().trim();
+        final String password = pwEditText.getText().toString().trim();
 
         if(username.isEmpty()){
             unEditText.setError("Enter an Email");
@@ -139,7 +139,18 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                     editor.commit();
                 }
                 else{
-                    Toast.makeText(getApplicationContext(),"Login Unsuccessful",Toast.LENGTH_SHORT).show();
+                    SharedPreferences sharedPreferences = getSharedPreferences("LoginDetails",Context.MODE_PRIVATE);
+
+                    if(username.equals(sharedPreferences.getString("userEmail","")) && password.equals(sharedPreferences.getString("userPassword",""))){
+                        finish();
+                        Intent intent = new Intent(getApplicationContext(),Home.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(intent);
+                    }
+                    else{
+                        Toast.makeText(getApplicationContext(),"Login Unsuccessful",Toast.LENGTH_SHORT).show();
+                    }
+
                 }
             }
         });

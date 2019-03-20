@@ -77,7 +77,9 @@ public class Home extends AppCompatActivity implements View.OnClickListener,Navi
 
 
             case  R.id.buttonActivityID:
-                Toast.makeText(getApplicationContext(),"Activity is selected",Toast.LENGTH_LONG).show();
+
+                Intent activityintent = new Intent(getApplicationContext(),Activities.class);
+                startActivity(activityintent);
                 break;
 
             case R.id.buttonNoticeBoardID:
@@ -85,13 +87,12 @@ public class Home extends AppCompatActivity implements View.OnClickListener,Navi
                 break;
 
             case  R.id.buttoniumsID:
-                Toast.makeText(getApplicationContext(),"IUMS is selected",Toast.LENGTH_LONG).show();
                 Intent intentiums = new Intent(getApplicationContext(),IUMS.class);
                 startActivity(intentiums);
                 break;
 
             case R.id.buttonReminderID:
-                Toast.makeText(getApplicationContext(),"Reminder is selected",Toast.LENGTH_LONG).show();
+
                 Intent intentreminder = new Intent(getApplicationContext(),Reminder.class);
                 startActivity(intentreminder);
                 break;

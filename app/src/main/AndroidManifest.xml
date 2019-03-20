@@ -25,7 +25,8 @@
         <activity android:name=".Settings" />
         <activity android:name=".Feedback" />
         <activity android:name=".About" />
-        <activity android:name=".Reminder"></activity>
+        <activity android:name=".Reminder" />
+        <activity android:name=".Activities"></activity>
     </application>
 
 </manifest>
