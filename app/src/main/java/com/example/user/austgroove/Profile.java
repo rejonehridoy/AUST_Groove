@@ -3,9 +3,11 @@ package com.example.user.austgroove;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,13 +37,23 @@ public class Profile extends AppCompatActivity {
     private TextView userTV,emailTV,semesterTV,sectionTV;
     List<UserProfile> userProfile;
     SharedPreferences.Editor editor;
+    private RelativeLayout layout;
+    private SharedPreferences sharedPreferences;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+
+        layout = findViewById(R.id.Profile_layoutID);
         databaseReference = FirebaseDatabase.getInstance().getReference("UserDetails");
+
+        //Check if DarkMode is activated previously by a user or not
+        sharedPreferences  = getSharedPreferences("LoginDetails",Context.MODE_PRIVATE);
+        if(sharedPreferences.getBoolean("DarkMode",false)){
+            layout.setBackgroundColor(Color.DKGRAY);
+        }
 
         userTV = findViewById(R.id.user_nameID);
         emailTV = findViewById(R.id.user_emailID);

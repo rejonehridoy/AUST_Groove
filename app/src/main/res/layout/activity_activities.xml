@@ -64,7 +64,7 @@
                                 android:textSize="16dp" />
 
                             <Button
-                                android:id="@+id/buttonActivityID"
+                                android:id="@+id/buttonAcademicID"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_alignParentTop="true"
@@ -107,7 +107,7 @@
                                 android:textSize="16dp" />
 
                             <Button
-                                android:id="@+id/buttonNoticeBoardID"
+                                android:id="@+id/buttonClassRoutineID"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:background="@color/cardview_shadow_end_color" />
@@ -157,7 +157,7 @@
                                 android:textSize="16dp" />
 
                             <Button
-                                android:id="@+id/buttoniumsID"
+                                android:id="@+id/buttonStudyMaterialID"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:background="@color/cardview_shadow_end_color" />
@@ -198,7 +198,7 @@
                                 android:textSize="16dp" />
 
                             <Button
-                                android:id="@+id/buttonReminderID"
+                                android:id="@+id/buttonResultID"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:background="@color/cardview_shadow_end_color" />

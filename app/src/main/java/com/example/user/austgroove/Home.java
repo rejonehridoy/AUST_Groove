@@ -83,7 +83,8 @@ public class Home extends AppCompatActivity implements View.OnClickListener,Navi
                 break;
 
             case R.id.buttonNoticeBoardID:
-                Toast.makeText(getApplicationContext(),"Notice Board is selected",Toast.LENGTH_LONG).show();
+                Intent NoticeBoardintent = new Intent(getApplicationContext(),NoticeBoard.class);
+                startActivity(NoticeBoardintent);
                 break;
 
             case  R.id.buttoniumsID:
@@ -98,7 +99,8 @@ public class Home extends AppCompatActivity implements View.OnClickListener,Navi
                 break;
 
             case R.id.buttoncgpaID:
-
+                Intent cgpaintent = new Intent(getApplicationContext(),CGPACalculatorHome.class);
+                startActivity(cgpaintent);
                 break;
 
             case R.id.buttonDiaryID:
