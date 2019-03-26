@@ -173,6 +173,7 @@
                         />
 
                     <Button
+                        android:id="@+id/Settings_UsernameButton"
                         android:layout_weight="2"
                         android:layout_width="35dp"
                         android:layout_height="35dp"
@@ -209,6 +210,7 @@
                     android:layout_height="wrap_content">
 
                     <TextView
+                        android:id="@+id/Settings_PhoneTV"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-light"
@@ -217,6 +219,7 @@
                         android:textSize="18sp" />
 
                     <Button
+                        android:id="@+id/Settings_PhoneButton"
                         android:layout_width="35dp"
                         android:layout_height="35dp"
                         android:layout_marginLeft="180dp"
@@ -259,6 +262,7 @@
                         android:textColor="#000000"
                         android:textSize="18sp" />
                     <Button
+                        android:id="@+id/Settings_SemesterButton"
                         android:layout_width="35dp"
                         android:layout_height="35dp"
                         android:layout_marginLeft="255dp"
@@ -302,6 +306,7 @@
                         android:textColor="#000000"
                         android:textSize="18sp" />
                     <Button
+                        android:id="@+id/Settings_SectionButton"
                         android:layout_width="35dp"
                         android:layout_height="35dp"
                         android:layout_marginLeft="265dp"

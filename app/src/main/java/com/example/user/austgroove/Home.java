@@ -3,6 +3,7 @@ package com.example.user.austgroove;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -16,6 +17,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,11 +28,16 @@ public class Home extends AppCompatActivity implements View.OnClickListener,Navi
     private Button activity,noticeBoard,iums,Reminder,cgpa,diary;
     SharedPreferences.Editor editor;
     private TextView userEmail2;
+    private RelativeLayout layout1,layout2,layout3,layout4,layout5,layout6,layout8;
+    private LinearLayout layout7;
+    SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        DarkMode();
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -71,6 +79,31 @@ public class Home extends AppCompatActivity implements View.OnClickListener,Navi
 
     }
 
+    private void DarkMode() {
+        layout1 = findViewById(R.id.Home_layout1);
+        layout2 = findViewById(R.id.Home_layout2);
+        layout3 = findViewById(R.id.Home_layout3);
+        layout4 = findViewById(R.id.Home_layout4);
+        layout5 = findViewById(R.id.Home_layout5);
+        layout6 = findViewById(R.id.Home_layout6);
+        layout7 = findViewById(R.id.Home_layout7);
+        layout8 = findViewById(R.id.Home_layout8);
+
+        //Check if DarkMode is activated previously by a user or not
+        sharedPreferences  = getSharedPreferences("LoginDetails",Context.MODE_PRIVATE);
+        if(sharedPreferences.getBoolean("DarkMode",false)){
+            layout1.setBackgroundColor(Color.DKGRAY);
+            layout2.setBackgroundColor(Color.DKGRAY);
+            layout3.setBackgroundColor(Color.DKGRAY);
+            layout4.setBackgroundColor(Color.DKGRAY);
+            layout5.setBackgroundColor(Color.DKGRAY);
+            layout6.setBackgroundColor(Color.DKGRAY);
+
+            layout7.setBackgroundColor(Color.DKGRAY);
+            layout8.setBackgroundColor(Color.DKGRAY);
+        }
+    }
+
     @Override
     public void onClick(View v) {
         switch (v.getId()){
@@ -104,6 +137,8 @@ public class Home extends AppCompatActivity implements View.OnClickListener,Navi
                 break;
 
             case R.id.buttonDiaryID:
+                Intent Diaryintent = new Intent(getApplicationContext(),Diary.class);
+                startActivity(Diaryintent);
 
                 break;
 
@@ -126,6 +161,7 @@ public class Home extends AppCompatActivity implements View.OnClickListener,Navi
                 Toast.makeText(getApplicationContext(),"Setting is selected",Toast.LENGTH_LONG).show();
                 Intent intentsettings = new Intent(getApplicationContext(),Settings.class);
                 startActivity(intentsettings);
+                this.finish();
                 break;
 
             case R.id.nav_feedback:

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/Diary_layoutID"
+    tools:context=".Diary">
+
+
+    <LinearLayout
+        android:weightSum="8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            style="@style/Base.TextAppearance.AppCompat.Body1"
+            android:text="Sticky Note"
+            android:fontFamily=""
+            android:textSize="25sp"
+            android:textAlignment="center"
+            android:layout_width="310dp"
+            android:layout_height="wrap_content" />
+        <Button
+            android:background="@drawable/ic_add_button"
+            android:id="@+id/addiconID"
+            android:layout_marginLeft="15dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+
+    </LinearLayout>
+    <ListView
+        android:id="@+id/listViewID"
+        android:dividerHeight="1dp"
+        android:listSelector="#9ebf26"
+        android:divider="#9cd486"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    </ListView>
+
+</LinearLayout>

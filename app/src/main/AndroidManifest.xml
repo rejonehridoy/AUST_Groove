@@ -36,7 +36,9 @@
         <activity android:name=".CGPACalculatorHome" />
         <activity android:name=".CGPAResultShow" />
         <activity android:name=".CGPAScreen1" />
-        <activity android:name=".CGPAScreen2"></activity>
+        <activity android:name=".CGPAScreen2" />
+        <activity android:name=".Diary" />
+        <activity android:name=".DiaryCreate"></activity>
     </application>
 
 </manifest>
