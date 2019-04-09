@@ -84,7 +84,7 @@
             android:id="@+id/yearSemesterEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
+            android:inputType="numberDecimal"
             android:ems="10"
             android:background="@android:color/transparent"
             android:drawablePadding="12dp"

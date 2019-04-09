@@ -27,9 +27,10 @@ public class Home extends AppCompatActivity implements View.OnClickListener,Navi
     private DrawerLayout drawer;
     private Button activity,noticeBoard,iums,Reminder,cgpa,diary;
     SharedPreferences.Editor editor;
-    private TextView userEmail2;
+    private TextView userEmail2,TV1,TV2,TV3,TV4,TV5,TV6;
     private RelativeLayout layout1,layout2,layout3,layout4,layout5,layout6,layout8;
     private LinearLayout layout7;
+    private ImageView profileIV;
     SharedPreferences sharedPreferences;
 
     @Override
@@ -68,6 +69,7 @@ public class Home extends AppCompatActivity implements View.OnClickListener,Navi
         Reminder = findViewById(R.id.buttonReminderID);
         cgpa = findViewById(R.id.buttoncgpaID);
         diary = findViewById(R.id.buttonDiaryID);
+        profileIV = findViewById(R.id.nav_profileID);
 
         activity.setOnClickListener(this);
         noticeBoard.setOnClickListener(this);
@@ -75,7 +77,7 @@ public class Home extends AppCompatActivity implements View.OnClickListener,Navi
         Reminder.setOnClickListener(this);
         cgpa.setOnClickListener(this);
         diary.setOnClickListener(this);
-
+        //profileIV.setOnClickListener(this);
 
     }
 
@@ -89,6 +91,13 @@ public class Home extends AppCompatActivity implements View.OnClickListener,Navi
         layout7 = findViewById(R.id.Home_layout7);
         layout8 = findViewById(R.id.Home_layout8);
 
+        TV1 = findViewById(R.id.home_TV1ID);
+        TV2 = findViewById(R.id.home_TV2ID);
+        TV3 = findViewById(R.id.home_TV3ID);
+        TV4 = findViewById(R.id.home_TV4ID);
+        TV5 = findViewById(R.id.home_TV5ID);
+        TV6 = findViewById(R.id.home_TV6ID);
+
         //Check if DarkMode is activated previously by a user or not
         sharedPreferences  = getSharedPreferences("LoginDetails",Context.MODE_PRIVATE);
         if(sharedPreferences.getBoolean("DarkMode",false)){
@@ -99,8 +108,14 @@ public class Home extends AppCompatActivity implements View.OnClickListener,Navi
             layout5.setBackgroundColor(Color.DKGRAY);
             layout6.setBackgroundColor(Color.DKGRAY);
 
-            layout7.setBackgroundColor(Color.DKGRAY);
-            layout8.setBackgroundColor(Color.DKGRAY);
+            TV1.setTextColor(Color.WHITE);
+            TV2.setTextColor(Color.WHITE);
+            TV3.setTextColor(Color.WHITE);
+            TV4.setTextColor(Color.WHITE);
+            TV5.setTextColor(Color.WHITE);
+            TV6.setTextColor(Color.WHITE);
+            //layout7.setBackgroundColor(Color.DKGRAY);
+            //layout8.setBackgroundColor(Color.DKGRAY);
         }
     }
 
@@ -132,7 +147,7 @@ public class Home extends AppCompatActivity implements View.OnClickListener,Navi
                 break;
 
             case R.id.buttoncgpaID:
-                Intent cgpaintent = new Intent(getApplicationContext(),CGPACalculatorHome.class);
+                Intent cgpaintent = new Intent(getApplicationContext(),CGPAScreen1.class);
                 startActivity(cgpaintent);
                 break;
 
@@ -140,6 +155,11 @@ public class Home extends AppCompatActivity implements View.OnClickListener,Navi
                 Intent Diaryintent = new Intent(getApplicationContext(),Diary.class);
                 startActivity(Diaryintent);
 
+                break;
+
+            case R.id.nav_profileID:
+                Intent profileintent = new Intent(getApplicationContext(),Profile.class);
+                startActivity(profileintent);
                 break;
 
         }

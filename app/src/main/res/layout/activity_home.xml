@@ -113,6 +113,7 @@
                                             android:src="@drawable/academic_activity" />
 
                                         <TextView
+                                            android:id="@+id/home_TV1ID"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_below="@+id/profileImageView"
@@ -155,6 +156,7 @@
                                             android:src="@drawable/notice_board" />
 
                                         <TextView
+                                            android:id="@+id/home_TV2ID"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_below="@+id/noticeboardImageView"
@@ -206,6 +208,7 @@
                                             android:src="@drawable/iums2" />
 
                                         <TextView
+                                            android:id="@+id/home_TV3ID"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_below="@+id/confortImageView"
@@ -248,6 +251,7 @@
                                             android:src="@drawable/reminder2" />
 
                                         <TextView
+                                            android:id="@+id/home_TV4ID"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_below="@+id/reminderImageView"
@@ -299,6 +303,7 @@
                                             android:src="@drawable/calculator" />
 
                                         <TextView
+                                            android:id="@+id/home_TV5ID"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_below="@+id/goalImageView"
@@ -341,12 +346,13 @@
                                             android:src="@drawable/diary" />
 
                                         <TextView
+                                            android:id="@+id/home_TV6ID"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_below="@+id/healthImageView"
                                             android:layout_centerHorizontal="true"
                                             android:layout_marginTop="10dp"
-                                            android:text="Diary"
+                                            android:text="ToDo List"
                                             android:textSize="16dp" />
 
                                         <Button
