@@ -14,8 +14,6 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.awt.font.TextAttribute;
-
 public class Settings extends AppCompatActivity implements View.OnClickListener,EditDialog.EditDialogListener {
 
     private Switch DarkMode;
@@ -34,24 +32,9 @@ public class Settings extends AppCompatActivity implements View.OnClickListener,
 
 
 
-        layout = findViewById(R.id.SettingslayoutID);
-        DarkMode  = findViewById(R.id.darkModeSwitchID);
-        UserNameTV = findViewById(R.id.Settings_UsernameTVID);
-        EmailTV = findViewById(R.id.Settings_EmailTVID);
-        SemesterTV = findViewById(R.id.Settings_SemesterTVID);
-        SectionTV = findViewById(R.id.Settings_SectionTVID);
-        UsernameEB = findViewById(R.id.Settings_UsernameButton);
-        PhoneNumberEB = findViewById(R.id.Settings_PhoneButton);
-        SemesterEB = findViewById(R.id.Settings_SemesterButton);
-        SectionEB = findViewById(R.id.Settings_SectionButton);
-        PhoneTV = findViewById(R.id.Settings_PhoneTV);
 
-        //Check if DarkMode is activated previously by a user or not
-        sharedPreferences  = getSharedPreferences("LoginDetails",Context.MODE_PRIVATE);
-        if(sharedPreferences.getBoolean("DarkMode",false)){
-            layout.setBackgroundColor(Color.DKGRAY);
-            DarkMode.setChecked(true);
-        }
+        DarkMode();
+
         // Set the user information through SharedPreference
         UserNameTV.setText(sharedPreferences.getString("userName",""));
         EmailTV.setText(sharedPreferences.getString("userEmail",""));
@@ -87,6 +70,32 @@ public class Settings extends AppCompatActivity implements View.OnClickListener,
                 }
             }
         });
+    }
+
+    private void DarkMode() {
+        layout = findViewById(R.id.SettingslayoutID);
+        DarkMode  = findViewById(R.id.darkModeSwitchID);
+        UserNameTV = findViewById(R.id.Settings_UsernameTVID);
+        EmailTV = findViewById(R.id.Settings_EmailTVID);
+        SemesterTV = findViewById(R.id.Settings_SemesterTVID);
+        SectionTV = findViewById(R.id.Settings_SectionTVID);
+        UsernameEB = findViewById(R.id.Settings_UsernameButton);
+        PhoneNumberEB = findViewById(R.id.Settings_PhoneButton);
+        SemesterEB = findViewById(R.id.Settings_SemesterButton);
+        SectionEB = findViewById(R.id.Settings_SectionButton);
+        PhoneTV = findViewById(R.id.Settings_PhoneTV);
+
+        //Check if DarkMode is activated previously by a user or not
+        sharedPreferences  = getSharedPreferences("LoginDetails",Context.MODE_PRIVATE);
+        if(sharedPreferences.getBoolean("DarkMode",false)){
+            layout.setBackgroundColor(Color.DKGRAY);
+            DarkMode.setChecked(true);
+            UserNameTV.setTextColor(Color.WHITE);
+            EmailTV.setTextColor(Color.WHITE);
+            SemesterTV.setTextColor(Color.WHITE);
+            SectionTV.setTextColor(Color.WHITE);
+            PhoneTV.setTextColor(Color.WHITE);
+        }
     }
 
     @Override
@@ -149,3 +158,4 @@ public class Settings extends AppCompatActivity implements View.OnClickListener,
         startActivity(Homeintent);
     }
 }
+

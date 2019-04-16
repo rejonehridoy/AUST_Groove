@@ -34,7 +34,7 @@ public class Profile extends AppCompatActivity {
     private FirebaseApp firebaseApp;
     private DatabaseReference databaseReference;
     private String userID;
-    private TextView userTV,emailTV,semesterTV,sectionTV;
+    private TextView userTV,emailTV,semesterTV,sectionTV,sessionTV;
     List<UserProfile> userProfile;
     SharedPreferences.Editor editor;
     private RelativeLayout layout;
@@ -50,19 +50,34 @@ public class Profile extends AppCompatActivity {
         databaseReference = FirebaseDatabase.getInstance().getReference("UserDetails");
 
         //Check if DarkMode is activated previously by a user or not
-        sharedPreferences  = getSharedPreferences("LoginDetails",Context.MODE_PRIVATE);
-        if(sharedPreferences.getBoolean("DarkMode",false)){
-            layout.setBackgroundColor(Color.DKGRAY);
-        }
 
-        userTV = findViewById(R.id.user_nameID);
-        emailTV = findViewById(R.id.user_emailID);
-        semesterTV = findViewById(R.id.user_semesterID);
-        sectionTV = findViewById(R.id.user_sectionID);
+
+        DarkMode();
         userProfile = new ArrayList<>();
 
 
 
+
+    }
+
+    private void DarkMode() {
+        userTV = findViewById(R.id.user_nameID);
+        emailTV = findViewById(R.id.user_emailID);
+        semesterTV = findViewById(R.id.user_semesterID);
+        sectionTV = findViewById(R.id.user_sectionID);
+        sessionTV = findViewById(R.id.profile_SessionID);
+
+
+
+        sharedPreferences  = getSharedPreferences("LoginDetails",Context.MODE_PRIVATE);
+        if(sharedPreferences.getBoolean("DarkMode",false)){
+            layout.setBackgroundColor(Color.DKGRAY);
+            userTV.setTextColor(Color.WHITE);
+            emailTV.setTextColor(Color.WHITE);
+            semesterTV.setTextColor(Color.WHITE);
+            sectionTV.setTextColor(Color.WHITE);
+            sessionTV.setTextColor(Color.WHITE);
+        }
     }
 
     @Override

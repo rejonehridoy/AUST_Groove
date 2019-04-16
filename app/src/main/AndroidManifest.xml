@@ -22,7 +22,6 @@
         <activity android:name=".Home" />
         <activity android:name=".IUMS" />
         <activity android:name=".Profile" />
-        <activity android:name=".Settings" />
         <activity android:name=".Feedback" />
         <activity android:name=".About" />
         <activity android:name=".Reminder" />
@@ -39,6 +38,8 @@
         <activity android:name=".CGPAScreen2" />
         <activity android:name=".Diary" />
         <activity android:name=".DiaryCreate" />
+        <activity android:name=".addReminder" />
+        <activity android:name=".Settings"></activity>
     </application>
 
 </manifest>
